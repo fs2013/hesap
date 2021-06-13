@@ -1,6 +1,7 @@
 {
   "hesap": {
     "Overview": "/",
-    "Giris": "card.html"
+    "Giris": "card.html",
+    "pricedata": "pricedata.html"
   }
 }

@@ -5,9 +5,14 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"Card": "00_card.ipynb",
          "Deck": "00_card.ipynb",
          "Hand": "00_card.ipynb",
-         "find_defining_class": "00_card.ipynb"}
+         "find_defining_class": "00_card.ipynb",
+         "get_history_yf": "01_pricedata.ipynb",
+         "get_history": "01_pricedata.ipynb",
+         "my_key": "01_pricedata.ipynb",
+         "ts": "01_pricedata.ipynb"}
 
-modules = ["card.py"]
+modules = ["card.py",
+           "pricedata.py"]
 
 doc_url = "https://fs2013.github.io/hesap/"
 

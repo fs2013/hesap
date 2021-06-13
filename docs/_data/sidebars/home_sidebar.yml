@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: Giris
       url: card.html
+    - output: web,pdf
+      title: pricedata
+      url: pricedata.html
     output: web
     title: hesap
   output: web
