@@ -33,6 +33,13 @@ nb_path: "01_pricedata.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -40,15 +47,15 @@ nb_path: "01_pricedata.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_history_yf" class="doc_header"><code>get_history_yf</code><a href="https://github.com/fs2013/hesap/tree/master/hesap/pricedata.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_history_yf</code>(<strong><code>assets</code></strong>:<code>List</code>[<code>T</code>]=<em><code>None</code></em>, <strong><code>start_date</code></strong>:<code>str</code>=<em><code>'2000-01-01'</code></em>, <strong><code>end_date</code></strong>:<code>str</code>=<em><code>None</code></em>)</p>
+<h4 id="get_history_yf" class="doc_header"><code>get_history_yf</code><a href="__main__.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_history_yf</code>(<strong><code>assets</code></strong>:<code>List</code>[<code>T</code>]=<em><code>None</code></em>, <strong><code>start_date</code></strong>:<code>str</code>=<em><code>'2000-01-01'</code></em>, <strong><code>end_date</code></strong>:<code>str</code>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Gets price history of list of assets from Yahoo Finance.
 The price data contains the following:
 Open, High, Low, Close, Adj Close, Volume</p>
-<p>:param assets: (list of str) Asset symbols
-:param start_date: (str) Starting Date
-:param end_date: (str) End Date (Excluded)
-:return: (dict of pandas.DataFrame) price history of assets</p>
+<p>-assets: (list of str) Asset symbols
+-start_date: (str) Starting Date
+-end_date: (str) End Date (Excluded)</p>
+<p>return: (dict of pandas.DataFrame) price history of assets</p>
 
 </div>
 
@@ -71,14 +78,14 @@ Open, High, Low, Close, Adj Close, Volume</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_history" class="doc_header"><code>get_history</code><a href="https://github.com/fs2013/hesap/tree/master/hesap/pricedata.py#L46" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_history</code>(<strong><code>assets</code></strong>:<code>List</code>[<code>T</code>]=<em><code>None</code></em>, <strong><code>verbose</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="get_history" class="doc_header"><code>get_history</code><a href="__main__.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_history</code>(<strong><code>assets</code></strong>:<code>List</code>[<code>T</code>]=<em><code>None</code></em>, <strong><code>verbose</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
-<p>Gets price history of list of assets from Alpha Vantage.
+<p>Gets price history of list of assets from Alpha Vantage. 
 The price data contains the following:
 open, high, low, close, adj_close, volume, dividend, and split_coef</p>
-<p>:param assets: (list of str) Asset symbols
-:param verbose: (bool) if True print some logs
-:return: (dict of pandas.DataFrame) price history of assets</p>
+<p>-assets: (list of str) Asset symbols</p>
+<p>-verbose: (bool) if True print some logs</p>
+<p>return: (dict of pandas.DataFrame) price history of assets</p>
 
 </div>
 
@@ -86,13 +93,6 @@ open, high, low, close, adj_close, volume, dividend, and split_coef</p>
 
 </div>
 </div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -149,7 +149,7 @@ open, high, low, close, adj_close, volume, dividend, and split_coef</p>
       <th>High</th>
       <th>Low</th>
       <th>Close</th>
-      <th>Adj Close</th>
+      <th>adj_close</th>
       <th>Volume</th>
     </tr>
     <tr>
@@ -206,188 +206,6 @@ open, high, low, close, adj_close, volume, dividend, and split_coef</p>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on TimeSeries in module alpha_vantage.timeseries object:
-
-class TimeSeries(alpha_vantage.alphavantage.AlphaVantage)
- |  TimeSeries(key=None, output_format=&#39;json&#39;, treat_info_as_error=True, indexing_type=&#39;date&#39;, proxy=None, rapidapi=False)
- |  
- |  This class implements all the api calls to times series
- |  
- |  Method resolution order:
- |      TimeSeries
- |      alpha_vantage.alphavantage.AlphaVantage
- |      builtins.object
- |  
- |  Methods defined here:
- |  
- |  get_daily(self, symbol, outputsize=&#39;compact&#39;)
- |      Return daily time series in two json objects as data and
- |      meta_data. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |          outputsize:  The size of the call, supported values are
- |              &#39;compact&#39; and &#39;full; the first returns the last 100 points in the
- |              data series, and &#39;full&#39; returns the full-length daily times
- |              series, commonly above 1MB (default &#39;compact&#39;)
- |  
- |  get_daily_adjusted(self, symbol, outputsize=&#39;compact&#39;)
- |      Return daily adjusted (date, daily open, daily high, daily low,
- |      daily close, daily split/dividend-adjusted close, daily volume)
- |      time series in two json objects as data and
- |      meta_data. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |          outputsize:  The size of the call, supported values are
- |              &#39;compact&#39; and &#39;full; the first returns the last 100 points in the
- |              data series, and &#39;full&#39; returns the full-length daily times
- |              series, commonly above 1MB (default &#39;compact&#39;)
- |  
- |  get_intraday(self, symbol, interval=&#39;15min&#39;, outputsize=&#39;compact&#39;)
- |      Return intraday time series in two json objects as data and
- |      meta_data. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |          interval:  time interval between two conscutive values,
- |              supported values are &#39;1min&#39;, &#39;5min&#39;, &#39;15min&#39;, &#39;30min&#39;, &#39;60min&#39;
- |              (default &#39;15min&#39;)
- |          outputsize:  The size of the call, supported values are
- |              &#39;compact&#39; and &#39;full; the first returns the last 100 points in the
- |              data series, and &#39;full&#39; returns the full-length intraday times
- |              series, commonly above 1MB (default &#39;compact&#39;)
- |  
- |  get_monthly(self, symbol)
- |      Return monthly time series in two json objects as data and
- |      meta_data. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |  
- |  get_monthly_adjusted(self, symbol)
- |      Return monthly time series in two json objects as data and
- |      meta_data. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |  
- |  get_quote_endpoint(self, symbol)
- |      Return the latest price and volume information for a
- |       security of your choice 
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |  
- |  get_symbol_search(self, keywords)
- |      Return best matching symbols and market information
- |      based on keywords. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          keywords: the keywords to query on
- |  
- |  get_weekly(self, symbol)
- |      Return weekly time series in two json objects as data and
- |      meta_data. It raises ValueError when problems arise
- |      
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |  
- |  get_weekly_adjusted(self, symbol)
- |      weekly adjusted time series (last trading day of each week,
- |      weekly open, weekly high, weekly low, weekly close, weekly adjusted
- |      close, weekly volume, weekly dividend) of the equity specified,
- |      covering up to 20 years of historical data.
- |      Keyword Arguments:
- |          symbol:  the symbol for the equity we want to get its data
- |  
- |  ----------------------------------------------------------------------
- |  Methods inherited from alpha_vantage.alphavantage.AlphaVantage:
- |  
- |  __init__(self, key=None, output_format=&#39;json&#39;, treat_info_as_error=True, indexing_type=&#39;date&#39;, proxy=None, rapidapi=False)
- |      Initialize the class
- |      
- |      Keyword Arguments:
- |          key:  Alpha Vantage api key
- |          retries:  Maximum amount of retries in case of faulty connection or
- |              server not able to answer the call.
- |          treat_info_as_error: Treat information from the api as errors
- |          output_format:  Either &#39;json&#39;, &#39;pandas&#39; os &#39;csv&#39;
- |          indexing_type: Either &#39;date&#39; to use the default date string given
- |          by the alpha vantage api call or &#39;integer&#39; if you just want an
- |          integer indexing on your dataframe. Only valid, when the
- |          output_format is &#39;pandas&#39;
- |          proxy: Dictionary mapping protocol or protocol and hostname to
- |          the URL of the proxy.
- |          rapidapi: Boolean describing whether or not the API key is
- |          through the RapidAPI platform or not
- |  
- |  map_to_matype(self, matype)
- |      Convert to the alpha vantage math type integer. It returns an
- |      integer correspondent to the type of math to apply to a function. It
- |      raises ValueError if an integer greater than the supported math types
- |      is given.
- |      
- |      Keyword Arguments:
- |          matype:  The math type of the alpha vantage api. It accepts
- |          integers or a string representing the math type.
- |      
- |              * 0 = Simple Moving Average (SMA),
- |              * 1 = Exponential Moving Average (EMA),
- |              * 2 = Weighted Moving Average (WMA),
- |              * 3 = Double Exponential Moving Average (DEMA),
- |              * 4 = Triple Exponential Moving Average (TEMA),
- |              * 5 = Triangular Moving Average (TRIMA),
- |              * 6 = T3 Moving Average,
- |              * 7 = Kaufman Adaptive Moving Average (KAMA),
- |              * 8 = MESA Adaptive Moving Average (MAMA)
- |  
- |  set_proxy(self, proxy=None)
- |      Set a new proxy configuration
- |      
- |      Keyword Arguments:
- |          proxy: Dictionary mapping protocol or protocol and hostname to
- |          the URL of the proxy.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from alpha_vantage.alphavantage.AlphaVantage:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
-
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

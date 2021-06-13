@@ -15,6 +15,12 @@ entries:
     - output: web,pdf
       title: pricedata
       url: pricedata.html
+    - output: web,pdf
+      title: optionsseasonal
+      url: optionsseasonal.html
+    - output: web,pdf
+      title: config
+      url: config.html
     output: web
     title: hesap
   output: web

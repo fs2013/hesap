@@ -9,10 +9,15 @@ index = {"Card": "00_card.ipynb",
          "get_history_yf": "01_pricedata.ipynb",
          "get_history": "01_pricedata.ipynb",
          "my_key": "01_pricedata.ipynb",
-         "ts": "01_pricedata.ipynb"}
+         "ts": "01_pricedata.ipynb",
+         "weekly_returns": "02_optionsseasonal.ipynb",
+         "build_weekly_db": "02_optionsseasonal.ipynb",
+         "get_config": "03_config.ipynb"}
 
 modules = ["card.py",
-           "pricedata.py"]
+           "pricedata.py",
+           "optionsseasonal.py",
+           "config.py"]
 
 doc_url = "https://fs2013.github.io/hesap/"
 

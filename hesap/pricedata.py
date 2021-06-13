@@ -28,15 +28,17 @@ def get_history_yf(assets: List=None,
     The price data contains the following:
     Open, High, Low, Close, Adj Close, Volume
 
-    :param assets: (list of str) Asset symbols
-    :param start_date: (str) Starting Date
-    :param end_date: (str) End Date (Excluded)
-    :return: (dict of pandas.DataFrame) price history of assets
+    -assets: (list of str) Asset symbols
+    -start_date: (str) Starting Date
+    -end_date: (str) End Date (Excluded)
+
+    return: (dict of pandas.DataFrame) price history of assets
     """
     if end_date is None:
         data = yf.download(assets, start_date)
     else:
         data = yf.download(assets, start_date, end_date)
+    data.rename(columns={'Adj Close': 'adj_close'}, inplace=True)
     return data
 
 
@@ -49,9 +51,11 @@ def get_history(assets: List=None, verbose: bool=True) -> pd.DataFrame:
     The price data contains the following:
     open, high, low, close, adj_close, volume, dividend, and split_coef
 
-    :param assets: (list of str) Asset symbols
-    :param verbose: (bool) if True print some logs
-    :return: (dict of pandas.DataFrame) price history of assets
+    -assets: (list of str) Asset symbols
+
+    -verbose: (bool) if True print some logs
+
+    return: (dict of pandas.DataFrame) price history of assets
     """
     prices = {}
     for i, asset in enumerate(assets):
