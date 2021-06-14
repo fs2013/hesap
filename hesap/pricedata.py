@@ -42,7 +42,7 @@ def get_history_yf(assets: List=None,
     return data
 
 
-my_key = open('../my_secrets/AlphaVantageKey').readline().strip()
+my_key = 'file' #open('../my_secrets/AlphaVantageKey').readline().strip()
 ts = TimeSeries(key=my_key, output_format="pandas")
 
 def get_history(assets: List=None, verbose: bool=True) -> pd.DataFrame:
